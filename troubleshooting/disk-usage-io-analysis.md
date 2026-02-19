@@ -1,17 +1,23 @@
 **Disk Usage & IO Analysis**
 
 What is Disk Usage?
+
 Disk usage refers to how storage space is consumed by files, directories, logs, applications, and system data.
 
 High disk usage may cause:
 
 Application failures
+
 System slowness
+
 Log write failures
+
 Service crashes
 
 Check Disk Space
+
 View filesystem usage
+
 df -h
 
 Find Large Directories
