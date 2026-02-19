@@ -1,4 +1,4 @@
-Disk Usage & IO Analysis
+**Disk Usage & IO Analysis**
 What is Disk Usage?
 
 Disk usage refers to how storage space is consumed by files, directories, logs, applications, and system data.
@@ -34,8 +34,7 @@ Find Large Directories
 Check directory size
 du -sh *
 
-## Disk Usage Check
-
+Disk Usage Check
 ![Disk Usage](Images/disk_usage.png)
 
 
