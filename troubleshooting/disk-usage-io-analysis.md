@@ -36,7 +36,8 @@ du -sh *
 
 ## Disk Usage Check
 
-![Disk Usage](images/disk_usage.png)
+![Disk Usage](Images/disk_usage.png)
+
 
 Shows folder-wise usage in current directory.
 
