@@ -1,7 +1,6 @@
 **Disk Usage & IO Analysis**
 
 What is Disk Usage?
-
 Disk usage refers to how storage space is consumed by files, directories, logs, applications, and system data.
 
 High disk usage may cause:
@@ -15,22 +14,6 @@ Check Disk Space
 View filesystem usage
 df -h
 
-Example output:
-
-Filesystem      Size  Used Avail Use%
-/dev/sda2        50G   40G   10G   80%
-
-
-Meaning:
-
-Size → Total disk
-
-Used → Consumed space
-
-Avail → Free space
-
-Use% → Disk utilization
-
 Find Large Directories
 Check directory size
 du -sh *
@@ -38,12 +21,18 @@ du -sh *
 Disk Usage Check
 ![Disk Usage](Images/disk_usage.png)
 
+Meaning:
+
+Size → Total disk
+Used → Consumed space
+Avail → Free space
+Use% → Disk utilization
+
 
 Shows folder-wise usage in current directory.
 
 Sort directories by size
 du -sh * | sort -hr
-
 
 Largest directories appear first.
 
@@ -66,63 +55,40 @@ Install:
 
 yum install ncdu -y
 
-
-or
-
-apt install ncdu -y
-
-
-Run:
-
-ncdu /
-
-
 ✔ Easy navigation
 ✔ Fast disk investigation
 
-🔹 Disk IO (Input / Output)
+**Disk IO (Input / Output)**
 
 Disk IO measures read/write operations happening on disk.
 
 High IO causes:
 
 System lag
-
 Slow applications
-
 Database delays
-
 Check Disk IO Usage
 Using iostat
 
 Install:
-
 yum install sysstat -y
 
-
 Run:
-
 iostat -x 1
 
 
 Important fields:
-
 %util → Disk busy percentage
-
 await → IO wait time
-
 r/s → Reads per second
-
 w/s → Writes per second
-
 %util near 100% = disk bottleneck
+
 
 Check IO Wait (CPU waiting for disk)
 top
 
-
 Look at:
-
 %wa
 
 
@@ -132,18 +98,16 @@ Live Disk Activity
 iotop
 
 
-Shows process-wise disk usage.
+**Shows process-wise disk usage.**
 
 Install if missing:
 
 yum install iotop -y
 
 Check Inode Usage
-
 Sometimes disk shows free space but cannot create files.
 
 Check inode usage:
-
 df -i
 
 
@@ -156,37 +120,32 @@ Check logs:
 du -sh /var/log/*
 
 
-Clear old logs safely:
+**Clear old logs safely:**
 
 truncate -s 0 /var/log/messages
 
 
 (or rotate logs using logrotate)
 
-Troubleshooting Workflow (Real Admin Approach)
+**Troubleshooting Workflow (Real Admin Approach)**
 
 Check disk space
-
 df -h
 
 
 Identify large directories
-
 du -sh * | sort -hr
 
 
 Locate large files
-
 find / -type f -size +500M
 
 
 Check disk IO
-
 iostat -x 1
 
 
 Identify heavy processes
-
 iotop
 
 
