@@ -26,7 +26,7 @@ swapon --show
 Check detailed memory statistics:
 vmstat 1
 
-If not Create New Swap File (1GB Example)
+**If not Create New Swap File (1GB Example)**
 Create swap file
 fallocate -l 1G /swapfile
 
