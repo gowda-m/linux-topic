@@ -54,6 +54,10 @@ Add:
 Test without reboot:
 mount -a
 
+## 🔹 Swap Memory Verification
+Below screenshot shows swap memory configured and active:
+
+![Swap Memory Output](Images/swap-mem-show.png)
 
 ***Extend Swap Memory*** Best Option
 
