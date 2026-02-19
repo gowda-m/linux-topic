@@ -21,35 +21,45 @@ View filesystem usage
 df -h
 
 Find Large Directories
+
 Check directory size
+
 du -sh *
 
 Disk Usage Check
+
 ![Disk Usage](Images/disk_usage.png)
 
 Meaning:
 
 Size → Total disk
+
 Used → Consumed space
+
 Avail → Free space
+
 Use% → Disk utilization
 
 
-Shows folder-wise usage in current directory.
+**Shows folder-wise usage in current directory.**
 
 Sort directories by size
+
 du -sh * | sort -hr
 
 Largest directories appear first.
 
 Find Large Files
+
 Files larger than 1GB
+
 find / -type f -size +1G 2>/dev/null
 
 
 Useful when disk suddenly becomes full.
 
 Check Top Disk Consumers
+
 du -ah / | sort -rh | head -20
 
 
@@ -61,8 +71,7 @@ Install:
 
 yum install ncdu -y
 
-✔ Easy navigation
-✔ Fast disk investigation
+Easy navigation Fast disk investigation
 
 **Disk IO (Input / Output)**
 
@@ -71,23 +80,34 @@ Disk IO measures read/write operations happening on disk.
 High IO causes:
 
 System lag
+
 Slow applications
+
 Database delays
+
 Check Disk IO Usage
+
 Using iostat
 
 Install:
+
 yum install sysstat -y
 
 Run:
+
 iostat -x 1
 
 
 Important fields:
+
 %util → Disk busy percentage
+
 await → IO wait time
+
 r/s → Reads per second
+
 w/s → Writes per second
+
 %util near 100% = disk bottleneck
 
 
@@ -101,6 +121,7 @@ Look at:
 High value = disk slow or overloaded.
 
 Live Disk Activity
+
 iotop
 
 
@@ -111,9 +132,11 @@ Install if missing:
 yum install iotop -y
 
 Check Inode Usage
+
 Sometimes disk shows free space but cannot create files.
 
 Check inode usage:
+
 df -i
 
 
@@ -136,22 +159,27 @@ truncate -s 0 /var/log/messages
 **Troubleshooting Workflow (Real Admin Approach)**
 
 Check disk space
+
 df -h
 
 
 Identify large directories
+
 du -sh * | sort -hr
 
 
 Locate large files
+
 find / -type f -size +500M
 
 
 Check disk IO
+
 iostat -x 1
 
 
 Identify heavy processes
+
 iotop
 
 
