@@ -5,12 +5,15 @@ Issue
 
 While installing packages using dnf, repositories failed with SSL errors:
 
-Curl error (35): SSL connect error
-Connection reset by peer in connection to repo.almalinux.org:443
-Commands Affected
-dnf install nginx
+
+**Commands Affected**
+
+dnf install services
+
 dnf update
+
 dnf makecache
+
 Symptoms
 
 ✅ Internet connectivity working
@@ -19,9 +22,10 @@ Symptoms
 
 ✅ HTTPS working for other sites
 
-❌ AlmaLinux repositories unreachable
+**❌ AlmaLinux repositories unreachable**
 
-Verification
+**Verification**
+
 ping 8.8.8.8              ✅ OK
 curl https://google.com   ✅ OK
 dnf makecache             ❌ FAILED
