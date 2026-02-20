@@ -1,42 +1,38 @@
 DNF SSL Connection Reset – AlmaLinux 9 Repository Fix
-
 Issue
+
+![yum-error](Images/yum_error.png)
 
 While installing packages using dnf, repositories failed with SSL errors:
 
-![yum-error](Images/yum-error.png)
-
 Curl error (35): SSL connect error
 Connection reset by peer in connection to repo.almalinux.org:443
-
-Commands affected:
-
+Commands Affected
 dnf install nginx
 dnf update
 dnf makecache
 Symptoms
 
-Internet connectivity working
+✅ Internet connectivity working
 
-DNS resolution working
+✅ DNS resolution working
 
-HTTPS working for other sites
+✅ HTTPS working for other sites
 
-**AlmaLinux repositories unreachable**
-
+❌ AlmaLinux repositories unreachable
 
 Verification
-ping 8.8.8.8        ✅ OK
+ping 8.8.8.8              ✅ OK
 curl https://google.com   ✅ OK
-dnf makecache       ❌ FAILED
+dnf makecache             ❌ FAILED
 
-Error:
+Error observed:
 
-**Cannot download repomd.xml
+Cannot download repomd.xml
 SSL_connect: Connection reset by peer
-Root Cause**
+Root Cause
 
-System could not complete TLS handshake with AlmaLinux CDN mirrors.
+The system could not complete the TLS handshake with AlmaLinux CDN mirrors.
 
 Possible reasons:
 
@@ -48,50 +44,65 @@ IPv6/CDN routing issues
 
 Corporate or VM network filtering
 
-DNF mirrorlist used HTTPS CDN endpoints which reset connections.
+dnf mirrorlist used HTTPS CDN endpoints which reset the connection during SSL negotiation.
 
 Solution (Working Fix)
 
-Bypass CDN mirrorlist and use direct HTTP mirrors.
+Bypass CDN mirrorlist and configure direct HTTP mirrors.
 
-1. Remove existing repo files
+1️⃣ Remove Existing Repository Files
 
-![working-update](Images/working-update.png)
+![Repo_delete_old](Images/Repo_delete_old.png)
 
 rm -f /etc/yum.repos.d/almalinux*.repo
-
-2. Configure BaseOS Repository
-
-   
+2️⃣ Configure BaseOS Repository
 vi /etc/yum.repos.d/baseos.repo
 [baseos]
 name=AlmaLinux 9 - BaseOS
 baseurl=http://mirror.alwyzon.net/almalinux/9/BaseOS/x86_64/os/
 enabled=1
 gpgcheck=0
-4. Configure AppStream Repository
+3️⃣ Configure AppStream Repository
 vi /etc/yum.repos.d/appstream.repo
 [appstream]
 name=AlmaLinux 9 - AppStream
 baseurl=http://mirror.alwyzon.net/almalinux/9/AppStream/x86_64/os/
 enabled=1
 gpgcheck=0
-5. Configure Extras Repository
+4️⃣ Configure Extras Repository
 vi /etc/yum.repos.d/extras.repo
 [extras]
 name=AlmaLinux 9 - Extras
 baseurl=http://mirror.alwyzon.net/almalinux/9/extras/x86_64/os/
 enabled=1
 gpgcheck=0
-6. Rebuild Cache
+5️⃣ Rebuild DNF Cache
 dnf clean all
 rm -rf /var/cache/dnf/*
 dnf makecache
 
 Expected output:
 
+![working-update](Images/working_update.png)
+
 Metadata cache created.
-6. Install Package
-dnf install nginx -y
+6️⃣ Install Package (Verification)
+yum install nginx -y
 
 ✅ Installation successful.
+
+Lessons Learned
+
+Network connectivity ≠ repository connectivity
+
+CDN TLS failures can break package managers
+
+Direct mirrors help isolate SSL/CDN problems
+
+Always troubleshoot layer-by-layer:
+
+Network → DNS → HTTPS → Repository
+
+Environment
+
+OS: AlmaLinux 9
