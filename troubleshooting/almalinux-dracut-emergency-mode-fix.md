@@ -30,6 +30,7 @@ System entered **dracut emergency mode** during boot.
 ![Edit_GRUB_menu](Images/Edit_GRUB_menu.png)
 
 Remove the following parameters:
+
 resume=/dev/mapper/almalinux-swap
 rd.lvm.lv=almalinux/swap
 
@@ -62,6 +63,7 @@ Kernel boot parameters contained:
 
 
 resume=/dev/mapper/almalinux-swap
+
 rd.lvm.lv=almalinux/swap
 
 
@@ -81,6 +83,7 @@ vi /etc/default/grub
 Remove these entries from `GRUB_CMDLINE_LINUX`:
 
 resume=/dev/mapper/almalinux-swap
+
 rd.lvm.lv=almalinux/swap
 
 
@@ -89,7 +92,9 @@ rd.lvm.lv=almalinux/swap
 ### 2. Rebuild GRUB Configuration
 
 ![Rebuild grub](Images/Rebuild_grub.png)
+
 grub2-mkconfig -o /boot/grub2/grub.cfg
+
 grub2-mkconfig -o /boot/efi/EFI/almalinux/grub.cfg
 
 
