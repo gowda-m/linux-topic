@@ -29,12 +29,14 @@ dnf makecache             ❌ FAILED
 Error observed:
 
 Cannot download repomd.xml
+
 SSL_connect: Connection reset by peer
+
 Root Cause
 
-The system could not complete the TLS handshake with AlmaLinux CDN mirrors.
+**The system could not complete the TLS handshake with AlmaLinux CDN mirrors.**
 
-Possible reasons:
+**Possible reasons:**
 
 Network firewall inspection
 
@@ -55,6 +57,7 @@ Bypass CDN mirrorlist and configure direct HTTP mirrors.
 ![Repo_delete_old](Images/Repo_delete_old.png)
 
 rm -f /etc/yum.repos.d/almalinux*.repo
+
 2️⃣ Configure BaseOS Repository
 vi /etc/yum.repos.d/baseos.repo
 [baseos]
@@ -62,6 +65,7 @@ name=AlmaLinux 9 - BaseOS
 baseurl=http://mirror.alwyzon.net/almalinux/9/BaseOS/x86_64/os/
 enabled=1
 gpgcheck=0
+
 3️⃣ Configure AppStream Repository
 vi /etc/yum.repos.d/appstream.repo
 [appstream]
@@ -69,13 +73,18 @@ name=AlmaLinux 9 - AppStream
 baseurl=http://mirror.alwyzon.net/almalinux/9/AppStream/x86_64/os/
 enabled=1
 gpgcheck=0
+
 4️⃣ Configure Extras Repository
+
 vi /etc/yum.repos.d/extras.repo
+
 [extras]
 name=AlmaLinux 9 - Extras
 baseurl=http://mirror.alwyzon.net/almalinux/9/extras/x86_64/os/
 enabled=1
 gpgcheck=0
+
+
 5️⃣ Rebuild DNF Cache
 dnf clean all
 rm -rf /var/cache/dnf/*
@@ -86,7 +95,9 @@ Expected output:
 ![working-update](Images/working_update.png)
 
 Metadata cache created.
+
 6️⃣ Install Package (Verification)
+
 yum install nginx -y
 
 ✅ Installation successful.
