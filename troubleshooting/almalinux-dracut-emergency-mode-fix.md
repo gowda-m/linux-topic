@@ -13,7 +13,6 @@ Press Control-D to continue
 
 ### Error Observed
 
-
 Failed to find logical volume "almalinux/swap"
 Warning: /dev/almalinux/swap does not exist
 
@@ -26,9 +25,11 @@ System entered **dracut emergency mode** during boot.
 
 1. At GRUB menu press `e`
 2. Locate the line starting with `linux`
-3. Remove the following parameters:
 
 
+![Edit_GRUB_menu](Images/Edit_GRUB_menu.png)
+
+Remove the following parameters:
 resume=/dev/mapper/almalinux-swap
 rd.lvm.lv=almalinux/swap
 
@@ -39,13 +40,15 @@ rd.lvm.lv=almalinux/swap
 Ctrl + X
 
 
-System boots successfully and SSH access (PuTTY) becomes available.
+**System boots successfully and SSH access (PuTTY) becomes available.**
 
 ---
 
-## Root Cause
-
 Checking `/etc/fstab` revealed:
+
+![verify fstab_$ old delete grub](verify_fstab_delete_grub.png)
+
+## Root Cause
 
 - System originally used **LVM swap**
 
@@ -73,9 +76,9 @@ Dracut attempted to activate a non-existent logical volume → boot failure.
 
 vi /etc/default/grub
 
+![default grub](Edit_default_grub.png) 
 
 Remove these entries from `GRUB_CMDLINE_LINUX`:
-
 
 resume=/dev/mapper/almalinux-swap
 rd.lvm.lv=almalinux/swap
@@ -85,7 +88,7 @@ rd.lvm.lv=almalinux/swap
 
 ### 2. Rebuild GRUB Configuration
 
-
+![Rebuild grub](Rebuild_grub.png)
 grub2-mkconfig -o /boot/grub2/grub.cfg
 grub2-mkconfig -o /boot/efi/EFI/almalinux/grub.cfg
 
