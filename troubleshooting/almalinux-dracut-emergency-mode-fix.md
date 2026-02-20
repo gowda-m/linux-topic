@@ -46,7 +46,7 @@ Ctrl + X
 
 Checking `/etc/fstab` revealed:
 
-![verify fstab_$ old delete grub](verify_fstab_delete_grub.png)
+![verify fstab $ old delete grub](Image/verify_fstab_delete_grub.png)
 
 ## Root Cause
 
@@ -76,7 +76,7 @@ Dracut attempted to activate a non-existent logical volume → boot failure.
 
 vi /etc/default/grub
 
-![default grub](Edit_default_grub.png) 
+![default grub](Image/Edit_default_grub.png)
 
 Remove these entries from `GRUB_CMDLINE_LINUX`:
 
@@ -88,7 +88,7 @@ rd.lvm.lv=almalinux/swap
 
 ### 2. Rebuild GRUB Configuration
 
-![Rebuild grub](Rebuild_grub.png)
+![Rebuild grub](Image/Rebuild_grub.png)
 grub2-mkconfig -o /boot/grub2/grub.cfg
 grub2-mkconfig -o /boot/efi/EFI/almalinux/grub.cfg
 
