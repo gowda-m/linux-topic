@@ -52,7 +52,7 @@ Corporate or VM network filtering
 
 dnf mirrorlist used HTTPS CDN endpoints which reset the connection during SSL negotiation.
 
-Solution (Working Fix)
+**Solution (Working Fix)**
 
 Bypass CDN mirrorlist and configure direct HTTP mirrors.
 
