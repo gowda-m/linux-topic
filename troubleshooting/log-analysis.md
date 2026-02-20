@@ -1,44 +1,87 @@
-1️. What is Log Analysis 
+**Log Analysis (journalctl & /var/log)**
 
-Log analysis helps identify system, service,
-and application issues using system logs.
+**1️⃣ What is Log Analysis**
 
-2️. Log Locations
+Log analysis helps identify system, service, and application issues using system-generated logs.
+It is one of the primary troubleshooting methods used by Linux administrators.
 
-Command:
+**2️⃣ Log Locations**
 
-ls -lh /var/log/
-
-/var/log/messages
-/var/log/secure
-/var/log/syslog
-/var/log/dmesg
+**Most Linux logs are stored in:** ls -lh /var/log/
 
 
-3️. journalctl Commands (It helps troubleshoot service failures, boot problems, and system errors.)
+**Common log files:**
 
-journalctl
-journalctl -xe
-journalctl -u nginx
-journalctl -f
-journalctl -b
-journalctl --since "1 hour ago"
+**/var/log/messages**   → General system logs
 
-4️. Traditional Log Monitoring
-tail -f /var/log/messages
-grep -i error /var/log/messages
-less /var/log/secure
+**/var/log/secure**     → Authentication & SSH logs
 
-5️. Troubleshooting Workflow 
+**/var/log/syslog**   → System activity (Debian/Ubuntu)
 
-1. systemctl status service
-2. journalctl -xe
-3. journalctl -u service
-4. tail -f /var/log/messages
-5. 
+**/var/log/dmesg**     → Kernel boot messages
 
-6️. Real Admin Scenario
+**3️⃣ journalctl Commands**
+
+(Used to troubleshoot service failures, boot problems, and system errors)
+
+View all logs **journalctl**
+
+Recent errors (most commonly used) **journalctl -xe**
+
+Logs for specific service **journalctl -u nginx**
+
+Follow logs in real time **journalctl -f**
+
+Logs from current boot **journalctl -b**
+
+Logs from last hour **journalctl --since "1 hour ago"**
+
+**4️⃣ Traditional Log Monitoring**
+
+Monitor logs live **tail -f /var/log/messages**
+
+Search for errors **grep -i error /var/log/messages**
+
+Read authentication logs **less /var/log/secure**
+
+**Example: Nginx service not able to start**
+
+![Nginx_service_error](Images/Nginx_service_error.png)
+
+
+**5️⃣ Troubleshooting Workflow**
+
+Check service status **systemctl status nginx**
+
+Validate configuration **nginx -t**
+
+Check system errors **journalctl -xe**
+
+Check service logs  **journalctl -u nginx**
+
+Monitor system logs   **tail -f /var/log/messages**
+
+
+
+**The error shown above indicates a syntax error in the nginx configuration file.
+
+Based on the log output, the incorrect configuration must be corrected in the config file before starting the service.**
+
+![Started_nginx](Images/Started_nginx.png)
+
+**After correcting configuration:**
+
+
+syntax is ok
+
+test is successful
+
+can start the service
+
+
+**6️⃣ Real Administrator Scenario**
 
 Example:
 
-Service failed to start. Using systemctl status and journalctl -xe, I identified permission error in configuration file and fixed ownership, restoring service successfully.
+A service failed to start after configuration changes.
+Using systemctl status and journalctl -xe, I identified a permission error in the configuration file. After correcting file ownership and validating using nginx -t, the service started successfully.
