@@ -14,6 +14,8 @@ systemctl status nginx
 ### 2. Verify Listening Port
 
 ss -tulnp
+![running_image](Images/running_image.png)
+
 
 ![running_image](Images/running_image.png)
 
