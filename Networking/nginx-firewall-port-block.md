@@ -17,7 +17,8 @@ systemctl status nginx
 
 ss -tulnp
 
-Networking/Images/running_image.png
+
+![running_image](Images/running_image.png)
 
 
 ---
