@@ -17,7 +17,7 @@ systemctl status nginx
 
 ss -tulnp
 
-![running_image](Images/running_image.png)
+![running_image](troubleshooting/Images/running_image.png)
 
 ---
 
@@ -38,7 +38,7 @@ Application working correctly.
 
 firewall-cmd --list-ports
 
-![running_image](Images/running_image)
+![running_image](troubleshooting/Images/running_image)
 
 **Observation:**
 Port 8080/tcp not allowed.
