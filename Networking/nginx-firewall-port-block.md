@@ -40,7 +40,7 @@ Application working correctly.
 
 firewall-cmd --list-ports
 
-![running_image](troubleshooting/Images/running_image)
+![running_image](Images/access_port.png)
 
 **Observation:**
 Port 8080/tcp not allowed.
