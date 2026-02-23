@@ -21,7 +21,7 @@ nmcli connection up eth0
 
 👉 This shows real experience.
 
-**2️ Routing Basics → Senior Thinking**
+** 2️ Routing Basics **
 
 Add:
 
@@ -35,9 +35,8 @@ ip route showed multiple default routes.
 ## Solution
 Configured route metric priority.
 
-This = L3 knowledge.
 
-**3️ Advanced Routing (Very Strong Section)**
+**3️ Advanced Routing ( imp )**
 
 Add real cases:
 
@@ -47,7 +46,6 @@ Backup network separated from production network.
 Solution:
 Policy Based Routing implemented.
 
-Hiring managers LOVE this.
 
 **4️ tcpdump Section (MOST IMPORTANT)**
 
