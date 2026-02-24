@@ -19,5 +19,6 @@ production experience.
 Linux | RHEL | Ubuntu | LVM | Systemd | Networking |
 Shell Scripting | Troubleshooting | Performance Analysis
 
+
 This repository acts as my personal Linux Administration reference
-and practical knowledge documentation. anup
+and practical knowledge documentation.
