@@ -21,4 +21,3 @@ Shell Scripting | Troubleshooting | Performance Analysis
 
 This repository acts as my personal Linux Administration reference
 and practical knowledge documentation.
-gowda
