@@ -10,6 +10,8 @@ Press Control-D to continue
 
 ![Error_message](Images/Error_image.png)
 
+![Error_message](Images/Error_image.png)
+
 
 ### Error Observed
 
