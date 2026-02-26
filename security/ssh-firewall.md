@@ -10,11 +10,7 @@ Check SSH status:
 
 systemctl status sshd
 
-Start SSH:
-
 systemctl start sshd
-
-Enable at boot:
 
 systemctl enable sshd
 
