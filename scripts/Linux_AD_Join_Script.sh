@@ -4,7 +4,6 @@ set -e
 # ==================================================
 # Script Name : Linux_AD_Join_Script.sh
 # Purpose     : Join Linux server to Active Directory
-# Author      : Abhishek
 # Supports    : RHEL / AlmaLinux / Ubuntu / SLES
 #
 # Usage:
