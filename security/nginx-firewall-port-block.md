@@ -1,13 +1,10 @@
-Troubleshooting: Nginx Running but Website Not Showing (Firewall Port Blocked)
-
-
-Nginx service is running successfully, but website is not accessible from browser.
-
-Example:
+#Nginx service is running successfully, but website is not accessible from browser. (Firewall Port Blocked)
 
 http://server-ip:8080
 
 Browser shows:  Site can't be reached
+
+![website_not_access](security/Images/website_not_access.png)
 
 ![website_not_access](security/Images/website_not_access.png)
 
