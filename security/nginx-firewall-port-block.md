@@ -23,6 +23,8 @@ Example output:
 
 ![service_running](security/Images/service_running.png)
 
+![service_running](security/Images/service_running.png)
+
 👉 Confirms nginx is working locally.
 
 ✅ Step 3 — Test Locally
