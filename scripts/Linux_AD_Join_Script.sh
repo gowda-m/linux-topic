@@ -1,14 +1,23 @@
 #!/bin/bash
 set -e
 
-echo "=== Starting Domain Join Script (Block AD Logins) ==="
+# ==================================================
+# Script Name : Linux_AD_Join_Script.sh
+# Purpose     : Join Linux server to Active Directory
+# Author      : Abhishek
+# Supports    : RHEL / AlmaLinux / Ubuntu / SLES
+#
+# Usage:
+#   sudo bash Linux_AD_Join_Script.sh
+#
+# Description:
+#   - Installs required packages
+#   - Configures Kerberos & SSSD
+#   - Joins AD domain
+#   - Allows AD user logins
+# ==================================================
 
-# ================================
-# Linux AD Integration
-# Works on: SLES / RHEL / AlmaLinux / Ubuntu
-# Domain: domain.IN
-# DCs: 172.16.*.*, 172.16.*.*
-# ================================
+echo "=== Starting Domain Join Script (Allow AD User Logins) ==="
 
 AD_DOMAIN="domain.IN"
 AD_USER="user"
