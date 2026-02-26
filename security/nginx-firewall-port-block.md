@@ -8,6 +8,8 @@ Browser shows:  Site can't be reached
 
 ![website_not_access](security/Images/website_not_access.png)
 
+![website_not_access](Images/website_not_access.png)
+
 
 ✅ Step 1 — Verify Nginx Service
 systemctl status nginx
