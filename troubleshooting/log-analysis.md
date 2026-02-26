@@ -79,7 +79,7 @@ test is successful
 can start the service
 
 
-**6️⃣ Real Administrator Scenario**
+**6️⃣ Real Scenario**
 
 Example:
 
