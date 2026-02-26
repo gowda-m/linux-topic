@@ -8,7 +8,6 @@ echo "=== Starting Domain Join Script (Block AD Logins) ==="
 # Works on: SLES / RHEL / AlmaLinux / Ubuntu
 # Domain: domain.IN
 # DCs: 172.16.*.*, 172.16.*.*
-# Block all AD user logins
 # ================================
 
 AD_DOMAIN="domain.IN"
