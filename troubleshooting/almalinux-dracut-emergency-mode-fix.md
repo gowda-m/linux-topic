@@ -7,8 +7,8 @@ System boot failed and dropped into:
 dracut:/#
 Press Control-D to continue
 
-
 ![Error_message](Images/Error_image.png)
+
 
 
 ### Error Observed
