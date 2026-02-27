@@ -1,11 +1,11 @@
 **Log Analysis (journalctl & /var/log)**
 
-**1️⃣ What is Log Analysis**
+**What is Log Analysis**
 
 Log analysis helps identify system, service, and application issues using system-generated logs.
 It is one of the primary troubleshooting methods used by Linux administrators.
 
-**2️⃣ Log Locations**
+**Log Locations**
 
 **Most Linux logs are stored in:** ls -lh /var/log/
 
@@ -20,7 +20,7 @@ It is one of the primary troubleshooting methods used by Linux administrators.
 
 **/var/log/dmesg**     → Kernel boot messages
 
-**3️⃣ journalctl Commands**
+**journalctl Commands**
 
 (Used to troubleshoot service failures, boot problems, and system errors)
 
@@ -36,7 +36,7 @@ Logs from current boot **journalctl -b**
 
 Logs from last hour **journalctl --since "1 hour ago"**
 
-**4️⃣ Traditional Log Monitoring**
+**Traditional Log Monitoring**
 
 Monitor logs live **tail -f /var/log/messages**
 
@@ -49,7 +49,7 @@ Read authentication logs **less /var/log/secure**
 ![Nginx_service_error](Images/Nginx_service_error.png)
 
 
-**5️⃣ Troubleshooting Workflow**
+**Troubleshooting Workflow**
 
 Check service status **systemctl status nginx**
 
@@ -79,7 +79,7 @@ test is successful
 can start the service
 
 
-**6️⃣ Real Scenario**
+**Real Scenario**
 
 Example:
 
