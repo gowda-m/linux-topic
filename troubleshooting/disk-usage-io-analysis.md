@@ -1,9 +1,10 @@
-📊 Disk Usage & IO Analysis (Linux)
-What is Disk Usage?
+**Disk Usage & IO Analysis (Linux)**
+
+**What is Disk Usage?**
 
 Disk usage refers to how storage space is consumed by files, directories, logs, applications, and system data.
 
-High disk usage may cause:
+**High disk usage may cause:**
 
 Application failures
 
@@ -13,66 +14,73 @@ Log write failures
 
 Service crashes
 
-🔹 Check Disk Space
+Check Disk Space
+
+
+
 View filesystem usage
-df -h
 
-🔹 Find Large Directories
+**df -h**
 
-Check directory size:
 
-du -sh *
+
+Find Large Directories
+
+****du -sh *********
 
 ![Disk Usage](Images/disk_usage.png)
 
 Disk Usage Meaning
+
 Field	Meaning
+
 Size	Total disk size
+
 Used	Consumed space
+
 Avail	Free space
+
 Use%	Disk utilization
+
+
 
 Shows folder-wise usage in current directory.
 
 Sort directories by size
-du -sh * | sort -hr
+
+**du -sh * | sort -hr**
 
 
-Largest directories appear first.
 
-🔹 Find Large Files
+Find Large Files
 
-Files larger than 1GB:
-
-find / -type f -size +1G 2>/dev/null
+**find / -type f -size +1G 2>/dev/null**
 
 
-Useful when disk suddenly becomes full.
-
-🔹 Check Top Disk Consumers
-du -ah / | sort -rh | head -20
 
 
-Shows top 20 largest files/directories.
+Check Top Disk Consumers
 
-🔹 Interactive Disk Analyzer (Recommended)
-
-Install:
-
-yum install ncdu -y
+**du -ah / | sort -rh | head -20**
 
 
-Run:
-
-ncdu /
 
 
- Easy navigation
+**Interactive Disk Analyzer (Recommended)**
+
+**yum install ncdu -y**
+
+Run: ncdu /
+
+for Easy navigation
+ 
  Fast disk investigation
 
-💽 Disk IO (Input / Output)
+Disk IO (Input / Output)
 
-Disk IO measures read/write operations happening on disk.
+
+
+**Disk IO measures read/write operations happening on disk.**
 
 High IO causes:
 
@@ -82,69 +90,87 @@ Slow applications
 
 Database delays
 
-🔹 Check Disk IO Usage
-Install required package
-yum install sysstat -y
+
+
+
+**Check Disk IO Usage**
+
+**yum install sysstat -y**
 
 Run:
 iostat -x 1
 
 Important fields
+
 Field	Meaning
+
 %util	Disk busy percentage
+
 await	IO wait time
+
 r/s	Reads per second
+
 w/s	Writes per second
 
  %util near 100% = Disk bottleneck.
 
-🔹 Check IO Wait (CPU waiting for disk)
-top
 
 
-Look at:
 
-%wa
+**Check IO Wait (CPU waiting for disk)**
+
+**top**
+
 
 
 High value = Disk slow or overloaded.
 
-🔹 Live Disk Activity
+**Live Disk Activity**
+
 iotop
+
+
 
 
 Shows process-wise disk usage.
 
 Install if missing:
 
-yum install iotop -y
+**yum install iotop -y**
 
-🔹 Check Inode Usage
+**Check Inode Usage**
 
 Sometimes disk shows free space but files cannot be created.
 
 Check inode usage:
 
-df -i
-
+**df -i**
 
 If inode usage = 100%, too many small files exist.
 
-🔹 Log File Cleanup (Common Fix)
+
+
+
+
+**Log File Cleanup (Common Fix)**
 
 Check logs:
 
-du -sh /var/log/*
+**du -sh /var/log/***
 
 
 Clear old logs safely:
 
-truncate -s 0 /var/log/messages
-
+**truncate -s 0 /var/log/messages**
 
 (or configure log rotation using logrotate)
 
-🛠 Troubleshooting Workflow (Real Admin Approach)
+
+
+
+
+
+**Troubleshooting Workflow (Real Approach)**
 
 1️⃣ Check disk space
 df -h
@@ -161,7 +187,7 @@ iostat -x 1
 5️⃣ Identify heavy processes
 iotop
 
-👨‍💻 Real Administrator Scenario
+(Real Scenario)
 
 Example:
 
