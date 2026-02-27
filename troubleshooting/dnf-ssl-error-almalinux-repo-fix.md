@@ -1,4 +1,4 @@
-*******DNF SSL Connection Reset – AlmaLinux 9 Repository Fix*******
+# DNF SSL Connection Reset – AlmaLinux 9 Repository Fix
 Issue
 
 ![yum-error](Images/yum_error.png)
@@ -24,10 +24,15 @@ Symptoms
 
 **❌ AlmaLinux repositories unreachable**
 
-**Verification**
+
+
+
+# Verification
 
 ping 8.8.8.8              ✅ OK
+
 curl https://google.com   ✅ OK
+
 dnf makecache             ❌ FAILED
 
 Error observed:
@@ -56,13 +61,13 @@ dnf mirrorlist used HTTPS CDN endpoints which reset the connection during SSL ne
 
 Bypass CDN mirrorlist and configure direct HTTP mirrors.
 
-**1️⃣ Remove Existing Repository Files**
+**Remove Existing Repository Files**
 
 ![Repo_delete_old](Images/Repo_delete_old.png)
 
 rm -f /etc/yum.repos.d/almalinux*.repo
 
-**2️⃣ Configure BaseOS Repository**
+**Configure BaseOS Repository**
 
 vi /etc/yum.repos.d/baseos.repo
 
@@ -76,7 +81,7 @@ enabled=1
 
 gpgcheck=0
 
-**3️⃣ Configure AppStream Repository**
+**Configure AppStream Repository**
 
 vi /etc/yum.repos.d/appstream.repo
 
@@ -90,7 +95,7 @@ enabled=1
 
 gpgcheck=0
 
-**4️⃣ Configure Extras Repository**
+**Configure Extras Repository**
 
 vi /etc/yum.repos.d/extras.repo
 
@@ -105,7 +110,7 @@ enabled=1
 gpgcheck=0
 
 
-**5️⃣ Rebuild DNF Cache**
+**Rebuild DNF Cache**
 
 dnf clean all
 
@@ -116,7 +121,7 @@ dnf makecache
 
 Metadata cache created....
 
-**6️⃣ Install Package (Verification)**
+**Install Package (Verification)**
 
 yum update -y
 
@@ -128,9 +133,7 @@ yum update -y
 
 
 
-
-
-**Lessons Learned**
+# Observations
 
 Network connectivity ≠ repository connectivity
 
