@@ -141,9 +141,3 @@ Direct mirrors help isolate SSL/CDN problems
 Always troubleshoot layer-by-layer:
 
 Network → DNS → HTTPS → Repository
-
-
-
-**Environment**
-
-OS: AlmaLinux 9
