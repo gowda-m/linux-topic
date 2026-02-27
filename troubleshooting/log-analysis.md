@@ -1,16 +1,18 @@
-**Log Analysis (journalctl & /var/log)**
+# Log Analysis (journalctl & /var/log)
 
-**What is Log Analysis**
+## What is Log Analysis ##
 
 Log analysis helps identify system, service, and application issues using system-generated logs.
 It is one of the primary troubleshooting methods used by Linux administrators.
+
+
 
 **Log Locations**
 
 **Most Linux logs are stored in:** ls -lh /var/log/
 
 
-**Common log files:**
+## Common log files ##
 
 **/var/log/messages**   → General system logs
 
@@ -20,9 +22,12 @@ It is one of the primary troubleshooting methods used by Linux administrators.
 
 **/var/log/dmesg**     → Kernel boot messages
 
-**journalctl Commands**
+**journalctl Commands** (Used to troubleshoot service failures, boot problems, and system errors)
 
-(Used to troubleshoot service failures, boot problems, and system errors)
+
+
+
+# #
 
 View all logs **journalctl**
 
@@ -36,7 +41,10 @@ Logs from current boot **journalctl -b**
 
 Logs from last hour **journalctl --since "1 hour ago"**
 
-**Traditional Log Monitoring**
+
+
+
+## Traditional Log Monitoring ##
 
 Monitor logs live **tail -f /var/log/messages**
 
@@ -49,7 +57,8 @@ Read authentication logs **less /var/log/secure**
 ![Nginx_service_error](Images/Nginx_service_error.png)
 
 
-**Troubleshooting Workflow**
+
+## Troubleshooting Workflow ##
 
 Check service status **systemctl status nginx**
 
@@ -62,15 +71,17 @@ Check service logs  **journalctl -u nginx**
 Monitor system logs   **tail -f /var/log/messages**
 
 
+## The error shown above indicates a syntax error in the nginx configuration file ##
 
-**The error shown above indicates a syntax error in the nginx configuration file.
-
-Based on the log output, the incorrect configuration must be corrected in the config file before starting the service.**
+**Based on the log output, the incorrect configuration must be corrected in the config file before starting the service.**
 
 ![Started_nginx](Images/Started_nginx.png)
 
+
 **After correcting configuration:**
 
+
+nginx -t 
 
 syntax is ok
 
@@ -79,7 +90,7 @@ test is successful
 can start the service
 
 
-**Real Scenario**
+## Real Scenario ##
 
 Example:
 
