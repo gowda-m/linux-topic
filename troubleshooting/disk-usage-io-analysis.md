@@ -1,4 +1,4 @@
-**Disk Usage & IO Analysis (Linux)**
+# Disk Usage & IO Analysis (Linux)
 
 **What is Disk Usage?**
 
@@ -26,7 +26,7 @@ View filesystem usage
 
 Find Large Directories
 
-****du -sh *********
+**du -sh **
 
 ![Disk Usage](Images/disk_usage.png)
 
@@ -66,7 +66,7 @@ Check Top Disk Consumers
 
 
 
-**Interactive Disk Analyzer (Recommended)**
+# Interactive Disk Analyzer (Recommended)
 
 **yum install ncdu -y**
 
@@ -170,7 +170,7 @@ Clear old logs safely:
 
 
 
-**Troubleshooting Workflow (Real Approach)**
+# Troubleshooting Workflow (Real Approach)
 
 1️⃣ Check disk space
 df -h
