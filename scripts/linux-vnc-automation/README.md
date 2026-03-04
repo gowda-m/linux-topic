@@ -77,6 +77,4 @@ From your local system:
 
 <server-ip>:5901
 
-![vnc_access](Images/vnc_access.png)
-
 Using any VNC Viewer (RealVNC, TigerVNC, etc.)
