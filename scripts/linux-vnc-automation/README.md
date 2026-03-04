@@ -8,6 +8,7 @@ This repository provides Bash scripts to configure VNC remote GUI access on:
 - SUSE Linux Enterprise Server (SLES)
 
 ---
+![vnc_access](Images/vnc_access.png)
 
 ## 🚀 Features
 
