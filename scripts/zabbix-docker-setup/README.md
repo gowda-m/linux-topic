@@ -1,4 +1,4 @@
-# Zabbix Docker Setup
+# Zabbix on Docker Setup
 
 Automated deployment of a **Zabbix monitoring environment using Docker containers**.
 This script installs and configures the required components including:
@@ -10,6 +10,9 @@ This script installs and configures the required components including:
 * Zabbix Agent
 
 The entire stack is deployed automatically with a single script.
+
+![zabbix_docker](Images/zabbix_docker.png)
+
 
 ---
 
