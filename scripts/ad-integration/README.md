@@ -49,10 +49,12 @@ chmod +x linux_ad_join.sh
 
 ### 3️⃣ Run the Script (as root or with sudo)
 
-```bash
-sudo ./linux_ad_join.sh
-```
+![AD_start](Images/AD_start.png)
 
+```bash
+sudo ./linux_ad_join.sh   or sh file.sh
+
+```
 ---
 
 ## What Happens During Execution
@@ -75,12 +77,11 @@ You will be prompted to enter:
 
 ---
 
-## Security Notes
+verify
 
-- Credentials are not stored in the script.
-- Password is securely prompted at runtime.
-- Do not hardcode credentials in production environments.
-- Review configuration before use in enterprise infrastructure.
+realm list
+
+![AD_verify](Images/AD_verify.png)
 
 ---
 
