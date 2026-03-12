@@ -15,7 +15,6 @@ This script is useful for **Linux System Administrators and DevOps Engineers** t
 
 ---
 
-![disk_usage](Images/disk_usage.png)
 
 # How to Run
 
@@ -37,7 +36,8 @@ If disk usage is high:
 Current Disk Usage: 85%
 WARNING: Disk usage is above 80%
 
-# Automation Using Cron
+
+![disk_usage](Images/disk_usage.png)
 
 # You can run this script automatically using cron.
 
