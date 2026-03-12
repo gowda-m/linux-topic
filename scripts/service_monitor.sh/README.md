@@ -31,16 +31,20 @@ Run the script:
 Service running:
 
 Checking status of sshd service...
+
 sshd service is running
 
-Service stopped:
+# If Service stopped:
 
 Checking status of sshd service...
+
 sshd service is not running
+
 Starting sshd service...
+
 sshd service started successfully
 
-**Automation Using Cron**
+# Automation Using Cron
 
 Example: Run every 5 minutes
 
