@@ -1,43 +1,67 @@
-Bash Scripting Notes
-1️⃣ Script Structure
+# Bash Scripting Notes
+
+Basic Bash scripting concepts used for Linux administration and automation.
+
+---
+
+# 1. Script Structure
 
 A Bash script is a file containing Linux commands executed sequentially.
 
-Create a script:
+### Create Script
 
+```bash
 vi gowda.sh
+```
 
-Basic structure:
+### Basic Script Example
 
+```bash
 #!/bin/bash
 
 echo "Today is a new day"
+```
 
-Give execute permission:
+### Give Execute Permission
 
+```bash
 chmod +x gowda.sh
+```
 
-Run the script:
+### Run Script
 
+```bash
 ./gowda.sh
-Basic Commands & Syntax
-Syntax	Meaning
-echo	Prints text to the screen
-read	Takes input from user
-$	Access variable value
-[ ]	Condition test
-" "	String with variable expansion
-' '	Literal string
+```
+
+---
+
+# 2. Basic Commands & Syntax
+
+| Syntax | Meaning |
+|------|------|
+| `echo` | Prints text to the terminal |
+| `read` | Takes input from the user |
+| `$` | Access variable value |
+| `[ ]` | Condition testing |
+| `" "` | String with variable expansion |
+| `' '` | Literal string |
 
 Example:
 
+```bash
 echo "Hello World"
-2️⃣ Variables in Bash
+```
 
-Variables store values.
+---
+
+# 3. Variables in Bash
+
+Variables are used to store values.
 
 Example:
 
+```bash
 #!/bin/bash
 
 name="Gowda"
@@ -45,34 +69,47 @@ company="ones"
 
 echo "My name is $name"
 echo "I work at $company"
+```
 
 Explanation:
 
-name → variable name
-$name → variable value
-3️⃣ User Input
+```
+name  -> variable name
+$name -> variable value
+```
 
-read takes input from the user and stores it in a variable.
+---
+
+# 4. User Input
+
+`read` is used to take input from the user.
 
 Example:
 
+```bash
 #!/bin/bash
 
 echo "Enter your name:"
 read name
 
 echo "Hello $name"
-4️⃣ Conditional Statements (if / else)
+```
 
-Used to make decisions in a script.
+---
 
-Keyword	Meaning
-if	Executes commands if condition is true
-else	Runs when condition is false
-fi	Ends the if statement
+# 5. Conditional Statements (if / else)
+
+Conditional statements are used to make decisions in scripts.
+
+| Keyword | Meaning |
+|------|------|
+| `if` | Executes commands if condition is true |
+| `else` | Executes when condition is false |
+| `fi` | Ends the if statement |
 
 Example:
 
+```bash
 #!/bin/bash
 
 echo "Enter number:"
@@ -84,45 +121,56 @@ then
 else
   echo "Number is less than or equal to 10"
 fi
+```
 
-Common operators:
+### Common Operators
 
-Operator	Meaning
--gt	Greater than
--lt	Less than
--eq	Equal
-5️⃣ Loops (for / while / until)
+| Operator | Meaning |
+|------|------|
+| `-gt` | Greater than |
+| `-lt` | Less than |
+| `-eq` | Equal |
+| `-ne` | Not equal |
 
-Loops repeat commands multiple times.
+---
 
-Loop	Purpose
-for	Used when you have a known list
-while	Runs while condition is true
-until	Runs until condition becomes true
+# 6. Loops (for / while / until)
 
-Example:
+Loops are used to repeat commands multiple times.
 
+| Loop | Purpose |
+|------|------|
+| `for` | Used when a list is known |
+| `while` | Runs while condition is true |
+| `until` | Runs until condition becomes true |
+
+Example: For Loop
+
+```bash
 #!/bin/bash
 
 for user in root gowda test1
 do
   id $user
 done
+```
 
 Loop syntax:
 
-do   → Start loop commands
-done → End loop
-6️⃣ Functions
+```
+do   -> Start loop commands
+done -> End loop
+```
 
-Functions allow reuse of code.
+---
 
-Function definition:
+# 7. Functions
 
-hello() { }
+Functions allow reuse of code inside scripts.
 
 Example:
 
+```bash
 #!/bin/bash
 
 check_disk() {
@@ -130,42 +178,73 @@ check_disk() {
 }
 
 check_disk
+```
 
 Explanation:
 
-check_disk() → function definition
-check_disk   → function call
-7️⃣ Command Substitution
+```
+check_disk() -> function definition
+check_disk   -> function call
+```
 
-Stores command output inside a variable.
+---
+
+# 8. Command Substitution
+
+Command substitution stores command output into a variable.
 
 Syntax:
 
+```bash
 variable=$(command)
+```
 
 Example:
 
+```bash
 #!/bin/bash
 
 today=$(date)
 
 echo "Today date is $today"
+```
 
 Another example:
 
+```bash
 #!/bin/bash
 
 hostname=$(hostname)
 
 echo "Server name is $hostname"
-Important Keywords Summary
-Keyword	Meaning
-echo	Print text
-read	Get user input
-if	Condition check
-else	Alternative condition
-fi	End if block
-do	Start loop
-done	End loop
-()	Function declaration
-$()	Command substitution
+```
+
+---
+
+# Important Keywords Summary
+
+| Keyword | Meaning |
+|------|------|
+| `echo` | Print text |
+| `read` | Get user input |
+| `if` | Condition check |
+| `else` | Alternative condition |
+| `fi` | End if block |
+| `do` | Start loop |
+| `done` | End loop |
+| `()` | Function declaration |
+| `$()` | Command substitution |
+
+---
+
+# Bash Scripting Use Cases
+
+Bash scripting is commonly used for:
+
+- Server monitoring
+- Disk usage automation
+- User management
+- Backup automation
+- Log file analysis
+- Service monitoring
+- System maintenance tasks
