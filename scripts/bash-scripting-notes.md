@@ -1,4 +1,4 @@
-# Bash Scripting Notes
+# Bash Scripting guide
 
 Basic Bash scripting concepts used for Linux administration and automation.
 
@@ -22,17 +22,22 @@ vi gowda.sh
 echo "Today is a new day"
 ```
 
-### Give Execute Permission
+### Give Permission & Execute
 
 ```bash
 chmod +x gowda.sh
-```
 
-### Run Script
+Run Script
 
-```bash
 ./gowda.sh
+
+**output**
+
+Today is a new day
+
 ```
+
+
 
 ---
 
