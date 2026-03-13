@@ -1,7 +1,7 @@
 # Linux Swap Memory Management
 
 ## What is Swap?
-Swap is disk space used as virtual memory when physical RAM becomes full.
+Swap is disk space used as virtual memory when physical RAM are becomes full.
 
 Linux moves inactive memory pages from RAM to swap to:
 - prevent system crashes
