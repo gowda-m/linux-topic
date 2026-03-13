@@ -22,7 +22,7 @@ Symptoms
 
 ✅ HTTPS working for other sites
 
-**❌ AlmaLinux repositories unreachable**
+**AlmaLinux repositories unreachable**
 
 
 
