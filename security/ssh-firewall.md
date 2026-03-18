@@ -1,4 +1,4 @@
-**What is SSH**
+ ## What is SSH
 
 SSH (Secure Shell) is used to securely connect to remote Linux servers.
 
@@ -8,42 +8,56 @@ Default Port: 22
 
 Check SSH status:
 
+```bash
+
 systemctl status sshd
-
 systemctl start sshd
-
 systemctl enable sshd
 
+```
+
+```
 Check listening port:
 
 ss -tulnp | grep ssh
 
+```
 **Test SSH Connectivity**
+
+```
 
 ssh user@server-ip
 
+```
 Check port connectivity:
-
+```
 telnet server-ip 22
+```
+
 
 ![ssh-firewalld](Images/ssh-firewalld.png)
 
+```
 
 **Firewall Basics (firewalld)**
 
 Check firewall status:
 
+```
 systemctl status firewalld
-
+```
 List allowed ports:
-
+```
 firewall-cmd --list-ports
+```
 
-**Allow SSH Port**
+```
+**Allow SSH Service**
 
 firewall-cmd --add-service=ssh --permanent
 
 firewall-cmd --reload
+```
 
 
 **Remove Allowed Port**
@@ -52,6 +66,8 @@ firewall-cmd --remove-port=22/tcp --permanent
 
 firewall-cmd --reload
 
+```
+
 **Troubleshooting SSH Connection Issue**
 
 
@@ -59,6 +75,7 @@ firewall-cmd --reload
 
 Checks :
 
+```
 ping server-ip
 
 systemctl status sshd
@@ -66,7 +83,7 @@ systemctl status sshd
 firewall-cmd --list-all
 
 getenforce
-
+```
 
 **Possible Causes**
 
@@ -77,3 +94,4 @@ Firewall blocking port
 SELinux restriction
 
 Wrong IP or network issue
+
