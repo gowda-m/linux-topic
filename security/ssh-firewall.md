@@ -4,7 +4,7 @@ SSH (Secure Shell) is used to securely connect to remote Linux servers.
 
 Default Port: 22
 
-**SSH Service Commands**
+## SSH Service Commands
 
 Check SSH status:
 
