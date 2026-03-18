@@ -1,45 +1,79 @@
 # Log Analysis (journalctl & /var/log)
 
-## What is Log Analysis ##
+**What is Log Analysis**
 
 Log analysis helps identify system, service, and application issues using system-generated logs.
 It is one of the primary troubleshooting methods used by Linux administrators.
 
-
+---
 
 **Log Locations**
 
-**Most Linux logs are stored in:** ls -lh /var/log/
+**Most Linux logs are stored in:** 
+
+```
+ls -lh /var/log/
+```
+
+# Common log files
+
+General system logs
+```
+ls /var/log/messages
+```
+
+Authentication & SSH logs
+```
+ls /var/log/secure
+```
+
+System activity (Debian/Ubuntu)
+```
+ls /var/log/syslog
+```
+
+Kernel boot messages
+```
+ls/var/log/dmesg
+```
+
+Used to troubleshoot service failures, boot problems, and system errors
+
+```
+journalctl Commands
+```
 
 
-## Common log files ##
+View all logs 
+```
+journalctl
+```
 
-**/var/log/messages**   → General system logs
+Recent errors (most commonly used) 
+```
+journalctl -xe
+```
 
-**/var/log/secure**     → Authentication & SSH logs
+Logs for specific service 
+```
+journalctl -u nginx
+```
 
-**/var/log/syslog**   → System activity (Debian/Ubuntu)
+Follow logs in real time 
+```
+journalctl -f
+```
 
-**/var/log/dmesg**     → Kernel boot messages
+Logs from current boot 
+```
+journalctl -b
+```
 
-**journalctl Commands** (Used to troubleshoot service failures, boot problems, and system errors)
+Logs from last hour 
+```
+journalctl --since "1 hour ago"
+```
 
-
-
-
-# #
-
-View all logs **journalctl**
-
-Recent errors (most commonly used) **journalctl -xe**
-
-Logs for specific service **journalctl -u nginx**
-
-Follow logs in real time **journalctl -f**
-
-Logs from current boot **journalctl -b**
-
-Logs from last hour **journalctl --since "1 hour ago"**
 
 
 
@@ -60,18 +94,34 @@ Read authentication logs **less /var/log/secure**
 
 ## Troubleshooting Workflow ##
 
-Check service status **systemctl status nginx**
+Check service status
+```
+systemctl status nginx
+```
 
-Validate configuration **nginx -t**
+Validate configuration 
+```
+nginx -t
+```
 
-Check system errors **journalctl -xe**
+Check system errors 
+```
+journalctl -xe
+```
 
-Check service logs  **journalctl -u nginx**
+Check service logs  
+```
+journalctl -u nginx
+```
 
-Monitor system logs   **tail -f /var/log/messages**
+Monitor system logs   
+```
+tail -f /var/log/messages
 
+```
+---
 
-## The error shown above indicates a syntax error in the nginx configuration file ##
+**The error shown below indicates a syntax error in the nginx configuration file**
 
 **Based on the log output, the incorrect configuration must be corrected in the config file before starting the service.**
 
@@ -80,9 +130,9 @@ Monitor system logs   **tail -f /var/log/messages**
 
 **After correcting configuration:**
 
-
+```
 nginx -t 
-
+```
 syntax is ok
 
 test is successful
@@ -90,9 +140,10 @@ test is successful
 can start the service
 
 
-## Real Scenario ##
+# Real Scenario
 
 Example:
-
+```
 A service failed to start after configuration changes.
 Using systemctl status and journalctl -xe, I identified a permission error in the configuration file. After correcting file ownership and validating using nginx -t, the service started successfully.
+```
