@@ -1,8 +1,6 @@
 # Dracut Emergency Mode – Missing LVM Swap (AlmaLinux)
 
-## Issue
-
-System boot failed and dropped into:
+## Issue System boot failed and dropped into:
 
 dracut:/#
 Press Control-D to continue
@@ -13,11 +11,13 @@ Press Control-D to continue
 
 ### Error Observed
 
+```
 Failed to find logical volume "almalinux/swap"
 Warning: /dev/almalinux/swap does not exist
 
 
 System entered **dracut emergency mode** during boot.
+```
 
 ---
 
@@ -31,15 +31,16 @@ System entered **dracut emergency mode** during boot.
 
 Remove the following parameters:
 
+```
 resume=/dev/mapper/almalinux-swap
 rd.lvm.lv=almalinux/swap
 
+```
 
 4. Boot using:
-
-
+```
 Ctrl + X
-
+```
 
 **System boots successfully and SSH access (PuTTY) becomes available.**
 
@@ -48,6 +49,9 @@ Ctrl + X
 Checking `/etc/fstab` revealed:
 
 ![verify_fstab_$_old_delete_grub](Images/verify_fstab_delete_grub.png)
+
+
+```
 
 ## Root Cause
 
@@ -68,6 +72,7 @@ rd.lvm.lv=almalinux/swap
 
 
 Dracut attempted to activate a non-existent logical volume → boot failure.
+```
 
 ---
 
@@ -75,8 +80,9 @@ Dracut attempted to activate a non-existent logical volume → boot failure.
 
 ### 1. Edit GRUB Defaults
 
-
+```
 vi /etc/default/grub
+```
 
 ![default grub](Images/Edit_default_grub.png)
 
@@ -93,26 +99,27 @@ rd.lvm.lv=almalinux/swap
 
 ![Rebuild grub](Images/Rebuild_grub.png)
 
+```
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 grub2-mkconfig -o /boot/efi/EFI/almalinux/grub.cfg
 
-
+```
 ---
 
 ### 3. Rebuild Initramfs
 
-
+```
 dracut -f
 
-
+```
 ---
 
 ### 4. Verify Boot Parameters
 
-
+```
 cat /proc/cmdline
-
+```
 
 Ensure **no swap LV references** exist.
 
@@ -120,16 +127,16 @@ Ensure **no swap LV references** exist.
 
 ## Verification
 
-
+```
 swapon --show
 uname -r
-
+```
 
 Result:
 
-✅ System boots normally  
-✅ No dracut emergency shell  
-✅ Swapfile active
+System boots normally  
+No dracut emergency shell  
+Swapfile active
 
 ---
 
