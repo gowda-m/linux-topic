@@ -12,16 +12,22 @@ RAM = fast memory
 Swap = slower disk-based memory
 
 ------------------------------
+```bash
 
+```
 ## Check Swap Usage ##
 
 Check memory and swap summary:
-free -h
 
+```
+
+free -h
+```
 
 Show active swap devices/files:
+```
 swapon --show
-
+```
 
 Check detailed memory statistics:
 vmstat 1
@@ -30,32 +36,41 @@ vmstat 1
 
 
 Create swap file
+```
 fallocate -l 1G /swapfile
-
+```
 Set secure permission
+```
 chmod 600 /swapfile
-
+```
 Format as swap
+```
 mkswap /swapfile
-
+```
 Enable swap
+```
 swapon /swapfile
+```
 
 Verify
+```
 free -h
+```
 
 **Make Swap Persistent (After Reboot)**
 
 Edit fstab:
+```
 vi /etc/fstab
-
 
 Add:
 /swapfile none swap sw 0 0
+```
 
 Test without reboot:
+```
 mount -a
-
+```
 ## Swap Memory Verification
 Below screenshot shows swap memory configured and active:
 
@@ -64,16 +79,21 @@ Below screenshot shows swap memory configured and active:
 ***Extend Swap Memory*** Best Option
 
 Disable existing swap:
+```
 swapoff /swapfile
-
+```
 
 Remove old swap:
+```
 rm -f /swapfile
+```
 
+---
 
-***Create again larger swap***As same***
+**Create again larger swap As same**
 
-Real Admin Scenario (below Example like)
+```
+**Real Scenario (below Example like)**
 
 During a production server slowdown:
 Observed high swap usage using **free -h**
@@ -81,6 +101,8 @@ Identified memory-heavy processes using **top**
 Verified swap activity using **vmstat 1**
 Found continuous swap-in/out activity
 Extended swap safely and optimized service memory usage
+
+```
 
 Result:
 System performance stabilized without downtime
