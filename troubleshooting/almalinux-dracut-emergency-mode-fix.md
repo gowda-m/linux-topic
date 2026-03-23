@@ -144,10 +144,3 @@ Swapfile active
 - `/etc/fstab` and kernel parameters must match.
 - Most dracut failures are caused by missing root or swap devices.
 
----
-
-## Environment
-
-- OS: AlmaLinux 9
-- Storage: LVM
-- Swap Type: swapfile
