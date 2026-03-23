@@ -16,18 +16,16 @@ systemctl enable sshd
 
 ```
 
-```
-Check listening port:
 
+Check listening port:
+```
 ss -tulnp | grep ssh
 
 ```
 **Test SSH Connectivity**
 
 ```
-
 ssh user@server-ip
-
 ```
 Check port connectivity:
 ```
