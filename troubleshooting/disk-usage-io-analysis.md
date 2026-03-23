@@ -9,13 +9,9 @@ Disk usage refers to how storage space is consumed by files, directories, logs, 
 
 ```
 Application failures
-
 System slowness
-
 Log write failures
-
 Service crashes
-
 Check Disk Space
 
 ```
