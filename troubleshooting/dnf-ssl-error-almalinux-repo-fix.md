@@ -131,9 +131,10 @@ yum update -y
 **Update successful.**
 
 
-```
 
-# Observations
+**Observations**
+
+```
 
 Network connectivity ≠ repository connectivity
 
