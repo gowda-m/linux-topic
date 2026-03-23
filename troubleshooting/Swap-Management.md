@@ -13,7 +13,7 @@ Swap = slower disk-based memory
 
 ------------------------------
 
-```
+bash```
 ## Check Swap Usage ##
 
 Check memory and swap summary:
@@ -59,10 +59,8 @@ free -h
 
 **Make Swap Persistent (After Reboot)**
 
-Edit fstab:
+Edit fstab: vi /etc/fstab
 ```
-vi /etc/fstab
-
 Add:
 /swapfile none swap sw 0 0
 ```
