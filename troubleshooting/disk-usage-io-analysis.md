@@ -29,17 +29,14 @@ du -sh
 ```
 ![Disk Usage](Images/disk_usage.png)
 
+
+**Disk Usage Meaning**
 ```
-Disk Usage Meaning
 
 Field	Meaning
-
 Size	Total disk size
-
 Used	Consumed space
-
 Avail	Free space
-
 Use%	Disk utilization
 
 ```
@@ -78,7 +75,7 @@ Run: ncdu /
 
 for Easy navigation
  
- Fast disk investigation
+Fast disk investigation
 
 Disk IO (Input / Output)
 
@@ -86,13 +83,11 @@ Disk IO (Input / Output)
 
 **Disk IO measures read/write operations happening on disk.**
 
-```
 High IO causes:
 
+```
 System lag
-
 Slow applications
-
 Database delays
 
 ```
