@@ -12,7 +12,6 @@ RAM = fast memory
 Swap = slower disk-based memory
 
 ------------------------------
-```bash
 
 ```
 ## Check Swap Usage ##
@@ -104,5 +103,3 @@ Extended swap safely and optimized service memory usage
 
 ```
 
-Result:
-System performance stabilized without downtime
