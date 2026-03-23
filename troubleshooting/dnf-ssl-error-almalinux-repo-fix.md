@@ -30,11 +30,9 @@ HTTPS working for other sites
 # Verification
 
 ```
-ping 8.8.8.8              ✅ OK
-
-curl https://google.com   ✅ OK
-
-dnf makecache             ❌ FAILED
+ping 8.8.8.8              
+curl https://google.com   
+dnf makecache             
 ```
 Error observed:
 
