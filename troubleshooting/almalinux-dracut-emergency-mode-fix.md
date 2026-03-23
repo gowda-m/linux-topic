@@ -46,15 +46,16 @@ Ctrl + X
 
 ---
 
-Checking `/etc/fstab` revealed:
+**Checking `/etc/fstab` revealed:**
 
 ![verify_fstab_$_old_delete_grub](Images/verify_fstab_delete_grub.png)
 
 
+
+
+**Root Cause**
+
 ```
-
-## Root Cause
-
 - System originally used **LVM swap**
 
 /dev/mapper/almalinux-swap
@@ -63,16 +64,18 @@ Checking `/etc/fstab` revealed:
 - A **swapfile** was created instead.
 - GRUB kernel parameters still referenced old LVM swap.
 
+```
+
 Kernel boot parameters contained:
 
-
+```
 resume=/dev/mapper/almalinux-swap
 
 rd.lvm.lv=almalinux/swap
 
-
-Dracut attempted to activate a non-existent logical volume → boot failure.
 ```
+Dracut attempted to activate a non-existent logical volume → boot failure.
+
 
 ---
 
@@ -86,11 +89,7 @@ vi /etc/default/grub
 
 ![default grub](Images/Edit_default_grub.png)
 
-Remove these entries from `GRUB_CMDLINE_LINUX`:
-
-resume=/dev/mapper/almalinux-swap
-
-rd.lvm.lv=almalinux/swap
+Remove these entries from `GRUB_CMDLINE_LINUX`:resume=/dev/mapper/almalinux-swap rd.lvm.lv=almalinux/swap
 
 
 ---
@@ -101,7 +100,6 @@ rd.lvm.lv=almalinux/swap
 
 ```
 grub2-mkconfig -o /boot/grub2/grub.cfg
-
 grub2-mkconfig -o /boot/efi/EFI/almalinux/grub.cfg
 
 ```
@@ -132,7 +130,7 @@ swapon --show
 uname -r
 ```
 
-Result:
+**Result:**
 
 System boots normally  
 No dracut emergency shell  
