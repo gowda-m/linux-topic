@@ -13,7 +13,6 @@ Swap = slower disk-based memory
 
 ------------------------------
 
-bash```
 ## Check Swap Usage ##
 
 Check memory and swap summary:
