@@ -47,13 +47,9 @@ Root Cause
 **Possible reasons:**
 ```
 Network firewall inspection
-
 CDN TLS incompatibility
-
 IPv6/CDN routing issues
-
 Corporate or VM network filtering
-
 dnf mirrorlist used HTTPS CDN endpoints which reset the connection during SSL negotiation.
 ```
 ---
