@@ -37,13 +37,11 @@ telnet server-ip 22
 
 ![ssh-firewalld](Images/ssh-firewalld.png)
 
-```
+
 
 **Firewall Basics (firewalld)**
 
-Check firewall status:
 
-```
 systemctl status firewalld
 ```
 List allowed ports:
