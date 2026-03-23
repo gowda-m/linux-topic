@@ -41,7 +41,7 @@ telnet server-ip 22
 
 **Firewall Basics (firewalld)**
 
-
+```
 systemctl status firewalld
 ```
 List allowed ports:
@@ -49,37 +49,28 @@ List allowed ports:
 firewall-cmd --list-ports
 ```
 
-```
+
 **Allow SSH Service**
-
+```
 firewall-cmd --add-service=ssh --permanent
-
 firewall-cmd --reload
 ```
 
 
 **Remove Allowed Port**
-
+```
 firewall-cmd --remove-port=22/tcp --permanent
-
 firewall-cmd --reload
-
 ```
 
 **Troubleshooting SSH Connection Issue**
-
-
-***Problem: Unable to connect via SSH***
 
 Checks :
 
 ```
 ping server-ip
-
 systemctl status sshd
-
 firewall-cmd --list-all
-
 getenforce
 ```
 
