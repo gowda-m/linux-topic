@@ -35,6 +35,7 @@ vmstat 1
 **If not Create New Swap File (1GB Example)**
 
 
+
 Create swap file
 ```
 fallocate -l 1G /swapfile
@@ -99,7 +100,6 @@ During a production server slowdown:
 Observed high swap usage using **free -h**
 Identified memory-heavy processes using **top**
 Verified swap activity using **vmstat 1**
-Found continuous swap-in/out activity
 Extended swap safely and optimized service memory usage
 
 ```
