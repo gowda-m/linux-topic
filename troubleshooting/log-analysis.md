@@ -80,11 +80,20 @@ journalctl --since "1 hour ago"
 
 ## Traditional Log Monitoring ##
 
-Monitor logs live **tail -f /var/log/messages**
+Monitor logs live
+```
+tail -f /var/log/messages
+```
 
-Search for errors **grep -i error /var/log/messages**
+Search for errors 
+```
+grep -i error /var/log/messages
+```
 
-Read authentication logs **less /var/log/secure**
+Read authentication logs
+```
+less /var/log/secure**
+```
 
 **Example: Nginx service not able to start**
 
