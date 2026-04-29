@@ -17,5 +17,5 @@ echo "Starting backup..."
 # Create backup
 tar -czf $DEST/$BACKUP_FILE $SOURCE
 
-echo "Backup completed successfully!"
+echo "Backup has been completed successfully!"
 echo "Backup file: $DEST/$BACKUP_FILE"
