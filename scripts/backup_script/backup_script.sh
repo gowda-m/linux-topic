@@ -3,7 +3,7 @@
 # Source directory to backup
 SOURCE="/home"
 
-# Backup destination directory
+# Backup destination to directory
 DEST="/backup"
 
 # Date format
@@ -14,7 +14,7 @@ BACKUP_FILE="backup-$DATE.tar.gz"
 
 echo "Starting backup..."
 
-# Create backup
+# Create backup in specific location 
 tar -czf $DEST/$BACKUP_FILE $SOURCE
 
 echo "Backup has been completed successfully!"
