@@ -1,4 +1,4 @@
-# Nginx service is running successfully, but website is not accessible from browser. (Firewall Port Blocked)
+# If nginx service is running successfully, but website is not accessible from browser. (Firewall Port Blocked)
 
 ```
 http://server-ip:8080
