@@ -24,7 +24,7 @@ Example output:
 ![service_running](Images/service_running.png)
 
 
-**👉 Confirms nginx is working locally.**
+**Confirms nginx is working locally.**
 
 **Step 3 — Test Locally**
 
