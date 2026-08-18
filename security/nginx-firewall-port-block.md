@@ -24,7 +24,7 @@ Example output:
 ![service_running](Images/service_running.png)
 
 
-**Confirms nginx is working locally.**
+**Confirm nginx service is working locally.**
 
 **Step 3 — Test Locally**
 
@@ -34,7 +34,7 @@ curl localhost:8080
 If response comes → nginx OK.
 
 
-**Step 4 — Check Firewall (Root Cause)**
+**Step 4 — Check Firewall (Root Cause to check)**
 ```
 firewall-cmd --list-ports
 ```
