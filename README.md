@@ -1,7 +1,7 @@
 # Linux Administration Knowledge Base
 
 This repository contains real-world Linux administration concepts,
-troubleshooting procedures, and automation scripts based on
+troubleshooting precess and automation scripts based on
 production experience.
 
 ## Areas Covered
