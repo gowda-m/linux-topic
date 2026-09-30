@@ -12,7 +12,7 @@ set -e
 # Root Check
 # -----------------------------
 if [[ $EUID -ne 0 ]]; then
-   echo "❌ This script must be run as root."
+   echo "This script must be run as root."
    exit 1
 fi
 
@@ -22,7 +22,7 @@ fi
 read -rp "Enter VNC username to create: " VNC_USER
 
 if [[ -z "$VNC_USER" ]]; then
-   echo "❌ Username cannot be empty."
+   echo "Username cannot be empty."
    exit 1
 fi
 
@@ -30,7 +30,7 @@ read -rsp "Enter password for $VNC_USER: " VNC_PASS
 echo ""
 
 if [[ -z "$VNC_PASS" ]]; then
-   echo "❌ Password cannot be empty."
+   echo "Password cannot be empty."
    exit 1
 fi
 
@@ -99,7 +99,7 @@ systemctl restart vncmanager
 
 echo ""
 echo "============================================="
-echo "✅ VNC setup completed successfully."
+echo "VNC setup completed successfully."
 echo "User        : $VNC_USER"
 echo "Display     : :1"
 echo "Port        : 5901"
