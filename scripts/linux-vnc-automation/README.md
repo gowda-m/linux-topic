@@ -10,7 +10,7 @@ This repository provides Bash scripts to configure VNC remote GUI access on:
 ---
 ![vnc_access](Images/vnc_access.png)
 
-## 🚀 Features
+## Features
 
 - Installs required VNC and GNOME packages
 - Creates Linux user (if not exists)
@@ -22,7 +22,7 @@ This repository provides Bash scripts to configure VNC remote GUI access on:
 
 ---
 
-## 🖥 Supported Operating Systems
+## Supported Operating Systems
 
 ### Red Hat Based
 - RHEL 8 / 9
@@ -34,14 +34,14 @@ This repository provides Bash scripts to configure VNC remote GUI access on:
 
 ---
 
-# 🔧 How to Execute
+# How to Execute this
 
-## 1️⃣ Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/linux-vnc-automation.git
 cd linux-vnc-automation
-2️⃣ Make Script Executable
+Make Script Executable
 
 For RHEL:
 
@@ -50,7 +50,7 @@ chmod +x rhel_vnc_auto_setup.sh
 For SLES:
 
 chmod +x sles_vnc_auto_setup.sh
-3️⃣ Run the Script (as root)
+Run the Script (as root)
 
 For RHEL:
 
@@ -67,11 +67,11 @@ Port : 5901
 
 Desktop : GNOME
 
-🔍 Verify VNC Service (RHEL)
+Verify VNC Service (RHEL)
 systemctl status vncserver@:1.service
-🔍 Verify VNC Service (SLES)
+Verify VNC Service (SLES)
 systemctl status vncmanager
-🛠 Example Connection
+Example Connection
 
 From your local system:
 
