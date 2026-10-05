@@ -1,6 +1,6 @@
 # Linux Administration Knowledge Base
 
-This repository contains real-world Linux administration concepts,
+This repository contains real  time Linux administration concepts 
 troubleshooting precess and automation scripts based on
 production experience.
 
