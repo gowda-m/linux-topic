@@ -1,4 +1,4 @@
- ## What is SSH
+ ## What is SSH Service?
 
 SSH (Secure Shell) is used to securely connect to remote Linux servers.
 
